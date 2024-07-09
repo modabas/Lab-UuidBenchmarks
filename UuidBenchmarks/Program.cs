@@ -4,7 +4,7 @@ using System.Collections.Concurrent;
 using UuidBenchmarks;
 
 #region "Benchmark"
-var summary = BenchmarkRunner.Run<UuidBenchmarks.UuidBenchmarks>();
+//var summary = BenchmarkRunner.Run<UuidBenchmarks.UuidBenchmarks>();
 #endregion
 
 #region "Uuid generation"
@@ -22,15 +22,17 @@ var summary = BenchmarkRunner.Run<UuidBenchmarks.UuidBenchmarks>();
 #endregion
 
 #region "Extensions"
-//var uuidNext2 = UuidNext.New7();
-//Console.WriteLine($"uuidNext: {uuidNext2}");
-//Console.WriteLine($"uuidNext is V7: {uuidNext2.IsV7()}");
-//Console.WriteLine($"uuidNext timestamp: {uuidNext2.ToDateTimeOffset()}");
+var uuidNext2 = UuidNext.New7();
+Console.WriteLine($"uuidNext: {uuidNext2}");
+Console.WriteLine($"uuidNext is V7: {uuidNext2.IsV7()}");
+Console.WriteLine($"uuidNext timestamp: {uuidNext2.ToDateTimeOffset()}");
+Console.WriteLine($"uuidNext timestamp: {uuidNext2.ToDateTime()}");
 
 //var nGuid2 = UuidBenchmarks.NGuid.New7();
 //Console.WriteLine($"nGuid: {nGuid2}");
 //Console.WriteLine($"nGuid is V7: {nGuid2.IsV7()}");
 //Console.WriteLine($"nGuid timestamp: {nGuid2.ToDateTimeOffset()}");
+//Console.WriteLine($"nGuid timestamp: {nGuid2.ToDateTime()}");
 #endregion
 
 #region "Single thread multiple Uuid generation"

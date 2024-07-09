@@ -21,75 +21,99 @@ public class UuidBenchmarks
         _nguid = NGuid.New7();
     }
 
+    //[Benchmark]
+    //public Ulid GenerateUlid()
+    //{
+    //    return Ulid.NewUlid();
+    //}
+
+    //[Benchmark]
+    //public Guid UlidToGuid()
+    //{
+    //    return _ulid.ToGuid();
+    //}
+
+    //[Benchmark]
+    //public Ulid ParseGuidToUlid()
+    //{
+    //    return new Ulid(_guid);
+    //}
+
+    //[Benchmark]
+    //public Uuid7 GenerateMedoUuid()
+    //{
+    //    return Uuid7.NewUuid7();
+    //}
+
+    //[Benchmark]
+    //public Guid MedoUuidToGuid()
+    //{
+    //    return _medoUuid.ToGuid();
+    //}
+
+    //[Benchmark]
+    //public Uuid7 ParseGuidToMedoUuid()
+    //{
+    //    return Uuid7.FromGuid(_guid);
+    //}
+
+    //[Benchmark]
+    //public UuidNext GenerateUuidNext()
+    //{
+    //    return UuidNext.New7();
+    //}
+
+    //[Benchmark]
+    //public Guid UuidNextToGuid()
+    //{
+    //    return _uuidNext.ToGuid();
+    //}
+
+    //[Benchmark]
+    //public UuidNext ParseGuidToUuidNext()
+    //{
+    //    return UuidNext.FromGuid(_guid);
+    //}
+
     [Benchmark]
-    public Ulid GenerateUlid()
+    public bool IsV7UuidNext()
     {
-        return Ulid.NewUlid();
+        return _uuidNext.IsV7();
     }
 
     [Benchmark]
-    public Guid UlidToGuid()
+    public DateTimeOffset GetDateTimeOffsetUuidNext()
     {
-        return _ulid.ToGuid();
+        return _uuidNext.ToDateTimeOffset();
+    }
+
+    //[Benchmark]
+    //public NGuid GenerateNGuid()
+    //{
+    //    return NGuid.New7();
+    //}
+
+    //[Benchmark]
+    //public Guid NGuidToGuid()
+    //{
+    //    return _nguid.ToGuid();
+    //}
+
+    //[Benchmark]
+    //public NGuid ParseGuidToNGuid()
+    //{
+    //    return NGuid.FromGuid(_guid);
+    //}
+
+    [Benchmark]
+    public bool IsV7NGuid()
+    {
+        return _nguid.IsV7();
     }
 
     [Benchmark]
-    public Ulid ParseGuidToUlid()
+    public DateTimeOffset GetDateTimeOffsetNGuid()
     {
-        return new Ulid(_guid);
-    }
-
-    [Benchmark]
-    public Uuid7 GenerateMedoUuid()
-    {
-        return Uuid7.NewUuid7();
-    }
-
-    [Benchmark]
-    public Guid MedoUuidToGuid()
-    {
-        return _medoUuid.ToGuid();
-    }
-
-    [Benchmark]
-    public Uuid7 ParseGuidToMedoUuid()
-    {
-        return Uuid7.FromGuid(_guid);
-    }
-
-    [Benchmark]
-    public UuidNext GenerateUuidNext()
-    {
-        return UuidNext.New7();
-    }
-
-    [Benchmark]
-    public Guid UuidNextToGuid()
-    {
-        return _uuidNext.ToGuid();
-    }
-
-    [Benchmark]
-    public UuidNext ParseGuidToUuidNext()
-    {
-        return UuidNext.FromGuid(_guid);
-    }
-
-    [Benchmark]
-    public NGuid GenerateNGuid()
-    {
-        return NGuid.New7();
-    }
-
-    [Benchmark]
-    public Guid NGuidToGuid()
-    {
-        return _nguid.ToGuid();
-    }
-
-    [Benchmark]
-    public NGuid ParseGuidToNGuid()
-    {
-        return NGuid.FromGuid(_guid);
+        return _nguid.ToDateTimeOffset();
     }
 }
